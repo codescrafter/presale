@@ -39,28 +39,13 @@ $ forge fmt
 $ forge snapshot
 ```
 
-### Anvil
 
+## Deploy And Verify
 ```shell
-$ anvil
+forge create --rpc-url $RPC_URL \
+--constructor-args $TOKEN_ADDRESS $TOKEN_PRICE start end \
+--private-key $PRIVATE_KEY src/Presale.sol:Presale \
+--etherscan-api-key $ETHERSCAN_API_KEY \
+--verify
 ```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+### Replace start and end with the relevant timestamps in seconds
